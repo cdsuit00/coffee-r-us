@@ -1,1 +1,68 @@
-{}
+{
+  "store_info": [
+    {
+      "id": 1,
+      "name": "Coffee Cafe",
+      "description": "The go to store for coffee",
+      "phone_number": "555-5555",
+      "coffee": [
+        { "id": 1, "name": "Vanilla Bean", "origin": "Columbia", "description": "Medium Roast, nutty flavor", "price": 10.00 },
+        { "id": 2, "name": "House Blend", "origin": "Vietnam", "description": "Dark Roast, Rich flavor", "price": 12.00 },
+        { "id": 3, "name": "Hazelnut Harmony", "origin": "Brazil", "description": "Sweet notes, mellow finish", "price": 9.50 },
+        { "id": 4, "name": "Cinnamon Swirl", "origin": "Peru", "description": "Subtle spice and creamy aroma", "price": 11.25 },
+        { "id": 5, "name": "Maple Drift", "origin": "Ethiopia", "description": "Medium roast with maple hints", "price": 10.75 },
+        { "id": 6, "name": "Espresso Storm", "origin": "Guatemala", "description": "Bold and vibrant shot", "price": 13.00 },
+        { "id": 7, "name": "Lavender Roast", "origin": "Kenya", "description": "Floral aroma with earthy base", "price": 12.25 },
+        { "id": 8, "name": "Mocha Mist", "origin": "Columbia", "description": "Chocolate tones with a creamy texture", "price": 11.00 }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Brew Haven",
+      "description": "Your cozy neighborhood roast house",
+      "phone_number": "555-1212",
+      "coffee": [
+        { "id": 9, "name": "Espresso Storm", "origin": "Guatemala", "description": "Bold and vibrant shot", "price": 13.00 },
+        { "id": 10, "name": "Coconut Bloom", "origin": "Thailand", "description": "Tropical roast with coconut highlights", "price": 10.75 },
+        { "id": 11, "name": "Cinnamon Swirl", "origin": "Peru", "description": "Subtle spice and creamy aroma", "price": 11.25 },
+        { "id": 12, "name": "Golden Sunrise", "origin": "Tanzania", "description": "Light roast with citrus notes", "price": 9.00 },
+        { "id": 13, "name": "Toffee Trail", "origin": "Brazil", "description": "Caramel meets roast perfection", "price": 11.50 },
+        { "id": 14, "name": "Almond Chill", "origin": "Mexico", "description": "Cool undertones with nutty finish", "price": 10.25 },
+        { "id": 15, "name": "Midnight Drip", "origin": "India", "description": "Smoky roast, late-night vibe", "price": 12.00 },
+        { "id": 16, "name": "Berry Bash", "origin": "Ethiopia", "description": "Fruity explosion in every sip", "price": 10.75 }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Roast & Toast",
+      "description": "Bold flavors, warm atmosphere",
+      "phone_number": "555-3434",
+      "coffee": [
+        { "id": 17, "name": "Golden Sunrise", "origin": "Tanzania", "description": "Light roast with citrus notes", "price": 9.00 },
+        { "id": 18, "name": "Hazelnut Harmony", "origin": "Brazil", "description": "Sweet notes, mellow finish", "price": 9.50 },
+        { "id": 19, "name": "Vanilla Bean", "origin": "Columbia", "description": "Medium Roast, nutty flavor", "price": 10.00 },
+        { "id": 20, "name": "Spiced Gold", "origin": "Peru", "description": "Ginger and cardamom delight", "price": 11.75 },
+        { "id": 21, "name": "Mint Roast", "origin": "Guatemala", "description": "Fresh mint infused into smooth roast", "price": 10.25 },
+        { "id": 22, "name": "Drizzle Delight", "origin": "Honduras", "description": "Creamy roast with caramel drizzle", "price": 11.00 },
+        { "id": 23, "name": "Walnut Wood", "origin": "Mexico", "description": "Rustic roast with nutty essence", "price": 12.00 },
+        { "id": 24, "name": "Berry Bash", "origin": "Ethiopia", "description": "Fruity explosion in every sip", "price": 10.75 }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Caffeinery",
+      "description": "Craft coffee curated for you",
+      "phone_number": "555-9876",
+      "coffee": [
+        { "id": 25, "name": "Dark Ember", "origin": "Vietnam", "description": "Intense, smoky roast", "price": 11.50 },
+        { "id": 26, "name": "Mint Roast", "origin": "Guatemala", "description": "Fresh mint infused into smooth roast", "price": 10.25 },
+        { "id": 27, "name": "Toffee Trail", "origin": "Brazil", "description": "Caramel meets roast perfection", "price": 11.50 },
+        { "id": 28, "name": "Walnut Wood", "origin": "Mexico", "description": "Rustic roast with nutty essence", "price": 12.00 },
+        { "id": 29, "name": "Lavender Roast", "origin": "Kenya", "description": "Floral aroma with earthy base", "price": 12.25 },
+        { "id": 30, "name": "Drizzle Delight", "origin": "Honduras", "description": "Creamy roast with caramel drizzle", "price": 11.00 },
+        { "id": 31, "name": "Coconut Bloom", "origin": "Thailand", "description": "Tropical roast with coconut highlights", "price": 10.75 },
+        { "id": 32, "name": "Spiced Gold", "origin": "Peru", "description": "Ginger and cardamom delight", "price": 11.75 }
+      ]
+    }
+  ]
+}
