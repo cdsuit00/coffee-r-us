@@ -1,47 +1,41 @@
-// src/hooks/useStoreCatalog.js
 import { useEffect, useState } from 'react';
 
-const API = 'http://localhost:3001/store_info'; // adjust as needed for deployment
+const API = 'http://localhost:3001/store_info';
 
-function useStoreCatalog() {
+function useAdminCoffee() {
   const [stores, setStores] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   // 🔄 Fetch all store data
-  const refreshStores = () => {
-    setLoading(true);
+  useEffect(() => {
     fetch(API)
-      .then((res) => {
-        if (!res.ok) throw new Error('Failed to fetch store data');
+      .then(res => {
+        if (!res.ok) throw new Error('Failed to fetch store info');
         return res.json();
       })
-      .then((data) => {
+      .then(data => {
         setStores(data);
         setLoading(false);
       })
-      .catch((err) => {
+      .catch(err => {
         setError(err.message);
         setLoading(false);
       });
-  };
-
-  useEffect(() => {
-    refreshStores();
   }, []);
 
-  // 🔍 Get store by ID
-  const getStoreById = (id) => stores.find((store) => store.id === id);
+  // 🎯 Get a store by ID
+  const getStoreById = (id) => stores.find(store => store.id === id);
 
-  // ✏️ Create or update coffee
+  // 🖊️ Add or edit coffee
   const upsertCoffee = async (storeId, coffeeData) => {
     const targetStore = getStoreById(storeId);
     if (!targetStore) return;
 
-    const existing = targetStore.coffee.find((c) => c.id === coffeeData.id);
+    const existing = targetStore.coffee.find(c => c.id === coffeeData.id);
     const updatedCoffeeList = existing
-      ? targetStore.coffee.map((c) => (c.id === coffeeData.id ? coffeeData : c))
-      : [...targetStore.coffee, coffeeData];
+      ? targetStore.coffee.map(c => (c.id === coffeeData.id ? coffeeData : c))
+      : [...targetStore.coffee, { ...coffeeData, id: Date.now() }];
 
     const updatedStore = { ...targetStore, coffee: updatedCoffeeList };
 
@@ -51,19 +45,19 @@ function useStoreCatalog() {
       body: JSON.stringify(updatedStore),
     });
 
-    setStores((prev) =>
-      prev.map((store) => (store.id === storeId ? updatedStore : store))
+    setStores(prev =>
+      prev.map(store => store.id === storeId ? updatedStore : store)
     );
   };
 
-  // ❌ Remove coffee from store
+  // ❌ Delete coffee
   const deleteCoffee = async (storeId, coffeeId) => {
     const targetStore = getStoreById(storeId);
     if (!targetStore) return;
 
     const updatedStore = {
       ...targetStore,
-      coffee: targetStore.coffee.filter((c) => c.id !== coffeeId),
+      coffee: targetStore.coffee.filter(c => c.id !== coffeeId),
     };
 
     await fetch(`${API}/${storeId}`, {
@@ -72,8 +66,8 @@ function useStoreCatalog() {
       body: JSON.stringify(updatedStore),
     });
 
-    setStores((prev) =>
-      prev.map((store) => (store.id === storeId ? updatedStore : store))
+    setStores(prev =>
+      prev.map(store => store.id === storeId ? updatedStore : store)
     );
   };
 
@@ -81,11 +75,10 @@ function useStoreCatalog() {
     stores,
     loading,
     error,
-    refreshStores,
     getStoreById,
     upsertCoffee,
     deleteCoffee,
   };
 }
 
-export default useStoreCatalog;
+export default useAdminCoffee;
