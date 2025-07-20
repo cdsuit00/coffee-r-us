@@ -1,4 +1,3 @@
-// hooks/useStoreCatalog.js
 import { useEffect, useState } from 'react';
 
 function useStoreCatalog() {
@@ -8,15 +7,15 @@ function useStoreCatalog() {
 
   useEffect(() => {
     fetch('http://localhost:3001/store_info')
-      .then(res => {
+      .then((res) => {
         if (!res.ok) throw new Error('Failed to fetch store info');
         return res.json();
       })
-      .then(data => {
+      .then((data) => {
         setStores(data);
         setLoading(false);
       })
-      .catch(err => {
+      .catch((err) => {
         setError(err.message);
         setLoading(false);
       });
